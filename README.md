@@ -15,4 +15,4 @@ python play.py
 
 ### What The Program Can do so far
 
-<a hrerf="http://imgur.com/SMfKjV9" ><img src="http://i.imgur.com/SMfKjV9.gifv" title="DEMO"/></a>
+<a hrerf="http://i.imgur.com/SMfKjV9.gifv" ><img src="http://i.imgur.com/SMfKjV9.gifv" title="DEMO"/></a>
