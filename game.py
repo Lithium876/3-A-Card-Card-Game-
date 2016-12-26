@@ -1,3 +1,4 @@
+from itertools import chain
 import random
 
 class Card:
@@ -7,6 +8,9 @@ class Card:
 
 	def showCard(self):
 		print("%s of %s"%(self.value,self.suit))
+
+	def getCard(self):
+		return("%s %s"%(self.value,self.suit))
 
 class Deck:
 	def __init__(self):
@@ -40,6 +44,9 @@ class Deck:
 	def drawCard(self):
 		return self.cards.pop()
 
+	def __len__(self):
+		return len(self.cards)
+
 class Player:
 	def __init__(self, name):
 		self.name = name
@@ -52,3 +59,9 @@ class Player:
 	def showHand(self):
 		for card in self.hand:
 			card.showCard()
+
+	def getHand(self):
+		arr_cards_in_hand=[]
+		for card in self.hand:
+			arr_cards_in_hand.append(card.getCard().split(' '))#create a list of lists here
+		return list(chain.from_iterable(arr_cards_in_hand)) #returns flatten list
