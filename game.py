@@ -1,4 +1,4 @@
-import random, time
+import random
 
 class Card:
 	def __init__(self, suit, value ):
@@ -37,12 +37,18 @@ class Deck:
 			rand = random.randint(0,i)
 			self.cards[i], self.cards[rand] = self.cards[rand], self.cards[i]
 
+	def drawCard(self):
+		return self.cards.pop()
 
+class Player:
+	def __init__(self, name):
+		self.name = name
+		self.hand = []
 
+	def drawCard(self, deck):
+		self.hand.append(deck.drawCard())
+		return self
 
-deck = Deck()
-deck.showDeck()	
-deck.shuffleDeck()
-print("\n\nShuffling Deck..")
-time.sleep(5)
-deck.showDeck()	
+	def showHand(self):
+		for card in self.hand:
+			card.showCard()
