@@ -1,5 +1,5 @@
 from itertools import chain
-import random
+import random, time
 
 class Card:
 	def __init__(self, suit, value ):
@@ -48,10 +48,14 @@ class Deck:
 		return len(self.cards)
 
 class Player:
+	house =[]
 	def __init__(self, name):
 		self.name = name
 		self.hand = []
 
+	def __len__(self):
+		return len(hand)
+		
 	def drawCard(self, deck):
 		self.hand.append(deck.drawCard())
 		return self
@@ -60,8 +64,23 @@ class Player:
 		for card in self.hand:
 			card.showCard()
 
+	def playCard(self, playCard):
+		Player.house.append(playCard)
+		self.hand.pop()
+		return self
+
 	def getHand(self):
 		arr_cards_in_hand=[]
 		for card in self.hand:
 			arr_cards_in_hand.append(card.getCard().split(' '))#create a list of lists here
 		return list(chain.from_iterable(arr_cards_in_hand)) #returns flatten list
+
+	def checkHand(self,current_card):
+		print("[+]%s needs a %s to of any suit to play..."%(self.name, current_card[len(current_card)-2]))
+		time.sleep(2)
+		for card_in_hand in self.hand:
+			card=card_in_hand.getCard().split(' ')
+			if card[0] in current_card[len(current_card)-2]:
+				return True
+			else:
+				pass
