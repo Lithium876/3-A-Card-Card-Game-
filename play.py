@@ -67,27 +67,3 @@ def getPlayersHand():
 		
 
 startGame()
-'''
-house = Player("House")
-paul = Player("Paul")
-bob = Player("Bob")
-
-paul.drawCard(deck).drawCard(deck).drawCard(deck)
-bob.drawCard(deck).drawCard(deck).drawCard(deck)
-
-print("Current")
-house.drawCard(deck)
-house.showHand()
-Current = house.getHand()
-print(Current)
-print("===========")
-
-print("Paul Hand")
-p=paul.getHand()
-print(p)
-print("===========")
-
-print("Bob Hand")
-b=bob.getHand()
-print(b)
-'''
