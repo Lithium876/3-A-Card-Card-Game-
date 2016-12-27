@@ -14,4 +14,4 @@ If none of the cards in your hand matches the random card from the deck or playe
 python play.py
 
 ### What The Program Can do so far
-<a href="http://imgur.com/uIRA1SP"><img src="http://i.imgur.com/uIRA1SP.gif" title="source: imgur.com" /></a>
+<a href="http://imgur.com/IPIe912"><img src="http://i.imgur.com/IPIe912.gif" title="source: imgur.com" /></a>
